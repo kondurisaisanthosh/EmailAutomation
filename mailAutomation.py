@@ -55,10 +55,11 @@ def main():
             msg['To'] = receiver_email
 
             # Create the body of the message (a plain-text and an HTML version).
-            text = "Hello "+value
+            text = ""
             html = """\
                 <html>
                       <body style = "color: black">
+                            <p>Hello {}</p>
                             <p> &emsp; I hope you are safe and doing well. My name is Santhosh Konduri, and I am writing to let you know about my interest in Java full-stack positions. As an accomplished Full Stack Java Developer with seven-plus years of experience designing, implementing, and maintaining robust software solutions, I am eager to contribute my skills and expertise to your esteemed organization. My background includes proficient utilization of frameworks and technologies such as Spring-boot, NodeJs, Angular, etc., enabling me to develop efficient, robust, and scalable applications.
                             <br>
                             &emsp; I am open to relocating to any place in the USA. Please find my employer details and resume attached, and let me know if you need anything.</p>
@@ -84,7 +85,7 @@ def main():
                             </p>      
                       </body>
                 </html>
-            """
+            """.format(value)
 
             # Attachment file path
             attachment_path = "/Users/saisanthoshkonduri/Downloads/2024 marketing/sanquest/Sai Santhosh Konduri.docx"
