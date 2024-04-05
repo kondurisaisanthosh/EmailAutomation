@@ -4,15 +4,26 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
+def read_properties(file_path):
+    properties = {}
+    with open(file_path, 'r') as file:
+        for line in file:
+            if '=' in line:
+                key, value = line.strip().split('=', 1)
+                properties[key.strip()] = value.strip()
+    return properties
+
 def getEmails():
     out = ["konduri.santhosh96@gmail.com","sandeep.konduri123@gmail.com", "saisanthoshkonduri@gmail.com","vamsi.gch@gmail.com", "goutham221997@gmail.com"]
     return out
 
 def main():
     try:
+        properties = read_properties('config.properties')
+
         # Email configuration
-        sender_email = "santosh.konduri95@gmail.com"
-        password = "lzupcarvdapsxqet"
+        sender_email = properties['email']
+        password = properties['password']
 
         # Connect to the SMTP server.
         server = smtplib.SMTP('smtp.gmail.com', 587)
