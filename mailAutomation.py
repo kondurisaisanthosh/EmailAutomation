@@ -54,9 +54,8 @@ def main():
             msg['Subject'] = "Job Application: Java Full Stack Developer"
             msg['To'] = receiver_email
 
-            # Create the body of the message (a plain-text and an HTML version).
-            text = ""
-            html = """\
+            # Create the body of the message (HTML version).
+            html = """
                 <html>
                       <body style = "color: black">
                             <p>Hello {}</p>
@@ -92,21 +91,19 @@ def main():
 
             with open(attachment_path, "rb") as attachment:
                 # Add file as application/octet-stream
-                part = MIMEBase("application", "octet-stream")
-                part.set_payload(attachment.read())
-            encoders.encode_base64(part)
+                part2 = MIMEBase("application", "octet-stream")
+                part2.set_payload(attachment.read())
+            encoders.encode_base64(part2)
 
             # Add header as key/value pair to attachment part
-            part.add_header(
+            part2.add_header(
                 "Content-Disposition",
                 f"attachment; filename= {attachment_path.split('/')[-1]}",
             )
             # Attach both plain-text and HTML versions of the message
-            part1 = MIMEText(text, 'plain')
-            part2 = MIMEText(html, 'html')
+            part1 = MIMEText(html, 'html')
             msg.attach(part1)
             msg.attach(part2)
-            msg.attach(part)
 
             # send the email
             server.sendmail(sender_email, receiver_email, msg.as_string())
