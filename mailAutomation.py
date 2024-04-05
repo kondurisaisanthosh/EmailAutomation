@@ -3,6 +3,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
+import pandas as pd
+import numpy as np
 
 def read_properties(file_path):
     properties = {}
@@ -14,7 +16,19 @@ def read_properties(file_path):
     return properties
 
 def getEmails():
-    out = ["konduri.santhosh96@gmail.com","sandeep.konduri123@gmail.com", "saisanthoshkonduri@gmail.com","vamsi.gch@gmail.com", "goutham221997@gmail.com"]
+    out = {}
+    excel_file = "vendor.xlsx"
+    # Read Excel file into a pandas DataFrame
+    df = pd.read_excel(excel_file, na_values=['', 'NA'])
+    data_dict = df.to_dict(orient="records")
+    for ele in data_dict:
+        key = ele['Email']
+        value =""
+        if str(ele['FirstName'])!="nan":
+            value += str(ele['FirstName'])+" "
+        if str(ele['LastName'])!="nan":
+            value += str(ele['LastName'])
+        out[key]=value
     return out
 
 def main():
@@ -31,8 +45,8 @@ def main():
         server.login(sender_email, password)
 
         receiver_emails = getEmails()
-        for i in range(len(receiver_emails)):
-            receiver_email = receiver_emails[i]
+        for key, value in receiver_emails.items():
+            receiver_email = key
 
             # Create message container - the correct MIME type is multipart/alternative.
             msg = MIMEMultipart()
@@ -41,11 +55,10 @@ def main():
             msg['To'] = receiver_email
 
             # Create the body of the message (a plain-text and an HTML version).
-            text = ""
+            text = "Hello "+value
             html = """\
                 <html>
                       <body style = "color: black">
-                            <p>Hello, </p>
                             <p> &emsp; I hope you are safe and doing well. My name is Santhosh Konduri, and I am writing to let you know about my interest in Java full-stack positions. As an accomplished Full Stack Java Developer with seven-plus years of experience designing, implementing, and maintaining robust software solutions, I am eager to contribute my skills and expertise to your esteemed organization. My background includes proficient utilization of frameworks and technologies such as Spring-boot, NodeJs, Angular, etc., enabling me to develop efficient, robust, and scalable applications.
                             <br>
                             &emsp; I am open to relocating to any place in the USA. Please find my employer details and resume attached, and let me know if you need anything.</p>
@@ -106,5 +119,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-
+    # getEmails()
 
