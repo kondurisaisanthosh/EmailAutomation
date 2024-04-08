@@ -46,7 +46,7 @@ def main():
 
         receiver_emails = getEmails()
         for key, value in receiver_emails.items():
-            receiver_email = key
+            receiver_email = key.strip()
 
             # Create message container - the correct MIME type is multipart/alternative.
             msg = MIMEMultipart()
