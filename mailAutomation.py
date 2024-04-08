@@ -76,7 +76,7 @@ def main():
 
                             <br>
                             <p>
-                            <b>Thanks,</b>
+                            <b>Thanks</b>
                             <br>
                             Sai Santhosh
                             <br>
