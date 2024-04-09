@@ -1,0 +1,7 @@
+EMAIL = "email"
+FIRST_NAME = "FirstName"
+LAST_NAME = "LastName"
+PASSWORD = "Password"
+FROM = "From"
+TO = "To"
+SUBJECT = "Subject"

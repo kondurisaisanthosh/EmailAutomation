@@ -5,7 +5,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 import pandas as pd
 import time
-
+import constants
 
 def read_properties(file_path):
     properties = {}
@@ -23,12 +23,12 @@ def getEmails():
     df = pd.read_excel(excel_file, na_values=['', 'NA'])
     data_dict = df.to_dict(orient="records")
     for ele in data_dict:
-        key = ele['Email']
+        key = ele[constants.EMAIL]
         value =""
-        if str(ele['FirstName'])!="nan":
-            value += str(ele['FirstName'])+" "
-        if str(ele['LastName'])!="nan":
-            value += str(ele['LastName'])
+        if str(ele[constants.FIRST_NAME])!="nan":
+            value += str(ele[constants.FIRST_NAME])+" "
+        if str(ele[constants.LAST_NAME])!="nan":
+            value += str(ele[constants.LAST_NAME])
         out[key]=value
     return out
 
@@ -39,8 +39,8 @@ def main():
         properties = read_properties('config.properties')
 
         # Email configuration
-        sender_email = properties['email']
-        password = properties['password']
+        sender_email = properties[constants.EMAIL]
+        password = properties[constants.PASSWORD]
 
         # Connect to the SMTP server.
         server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -54,9 +54,9 @@ def main():
 
             # Create message container - the correct MIME type is multipart/alternative.
             msg = MIMEMultipart()
-            msg['From'] = sender_email
-            msg['Subject'] = "Job Application: Java Full Stack Developer"
-            msg['To'] = receiver_email
+            msg[constants.FROM] = sender_email
+            msg[constants.SUBJECT] = "Job Application: Java Full Stack Developer"
+            msg[constants.TO] = receiver_email
 
             # Create the body of the message (HTML version).
             html = """
