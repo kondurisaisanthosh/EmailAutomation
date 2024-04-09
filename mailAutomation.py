@@ -4,7 +4,8 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 import pandas as pd
-import numpy as np
+import time
+
 
 def read_properties(file_path):
     properties = {}
@@ -33,6 +34,8 @@ def getEmails():
 
 def main():
     try:
+        start_time = time.time()
+        count=0
         properties = read_properties('config.properties')
 
         # Email configuration
@@ -46,6 +49,7 @@ def main():
 
         receiver_emails = getEmails()
         for key, value in receiver_emails.items():
+            count += 1
             receiver_email = key.strip()
 
             # Create message container - the correct MIME type is multipart/alternative.
@@ -108,6 +112,10 @@ def main():
             # send the email
             server.sendmail(sender_email, receiver_email, msg.as_string())
             print("Email sent successfully to", receiver_email)
+        end_time = time.time()
+        total_time = end_time - start_time
+        print("Total time taken:", total_time, "seconds")
+        print("Total No of Emails:", count)
 
     except Exception as e:
         print(e)
