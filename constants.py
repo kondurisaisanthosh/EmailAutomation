@@ -1,4 +1,4 @@
-EMAIL = "email"
+EMAIL = "Email"
 FIRST_NAME = "FirstName"
 LAST_NAME = "LastName"
 PASSWORD = "Password"
