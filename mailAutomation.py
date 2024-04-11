@@ -65,8 +65,14 @@ def main():
                             <p>
                                 Hello {},
                             </p>
+                        
                             <p>
-                                I hope you are safe and doing well. With over seven years of expertise as a Senior Software Fullstack developer, I bring a wealth of knowledge to the organization. I reside in Dallas, Texas. I am open to relocating to any place in the USA and remote opportunities.  
+                                <br>
+                                I hope you are safe and doing well. 
+                            </p>
+                        
+                            <p>
+                                With over seven years of expertise as a Senior Software Fullstack developer, I bring a wealth of knowledge to the organization. I reside in Dallas, Texas. I am open to relocating to any place in the USA and remote opportunities.  
                             </p>
                             <p>
                                 I am excited about contributing my skills and experience to your team. Could we schedule a discussion at your earliest convenience to explore this further?
@@ -77,6 +83,7 @@ def main():
                             </p>
                                                         
                             <p>
+                                <br>
                                 Best Regards,
                                 <br>
                                 Sai Santhosh
