@@ -62,33 +62,28 @@ def main():
             html = """
                 <html>
                       <body style = "color: black">
-                            <p>Hello {},</p>
                             <p>
-                            I hope you are safe and doing well. 
-                            <br>
-                            With over seven years of expertise as a Senior Software Fullstack developer, I bring a wealth of knowledge to the organization. I reside in Dallas, Texas. I am open to relocating to any place in the USA and remote opportunities.                            <br>
-                            I am excited about contributing my skills and experience to your team. Could we schedule a discussion at your earliest convenience to explore this further?                            <p>
-                            For your perusal, I have attached my resume.
-                            
-                            <b>Employer Details:</b>
-                            <br>
-                            Rahul Varma
-                            <br>
-                            Email: Rahul@sanquest.com
-                            <br>
-                            Sr. Talent Acquisition Specialist
-                            <br>
-                            SanQuest, Inc. | 713-400-1275 | 8411 Sterling St, Irving, TX 75063. </p>
-
-                            <br>
+                                Hello {},
+                            </p>
                             <p>
-                            <b>Thanks,</b>
-                            <br>
-                            Sai Santhosh
-                            <br>
-                            Email: kondurisanthosh500@gmail.com
-                            <br>
-                            Phone: (720) 649- 6277
+                                I hope you are safe and doing well. 
+                                <br>
+                                With over seven years of expertise as a Senior Software Fullstack developer, I bring a wealth of knowledge to the organization. I reside in Dallas, Texas. I am open to relocating to any place in the USA and remote opportunities.
+                                <br>
+                                I am excited about contributing my skills and experience to your team. Could we schedule a discussion at your earliest convenience to explore this further?  
+                            </p>
+                            <p>
+                                For your perusal, I have attached my resume.
+                            </p>
+                                                        
+                            <p>
+                                Best Regards,
+                                <br>
+                                Sai Santhosh
+                                <br>
+                                Email: kondurisanthosh500@gmail.com
+                                <br>
+                                Phone: (720) 649- 6277
                             </p>      
                       </body>
                 </html>
