@@ -62,12 +62,14 @@ def main():
             html = """
                 <html>
                       <body style = "color: black">
-                            <p>Hello {}</p>
-                            <p> &emsp; I hope you are safe and doing well. My name is Santhosh Konduri, and I am writing to let you know about my interest in Java full-stack positions. As an accomplished Full Stack Java Developer with seven-plus years of experience designing, implementing, and maintaining robust software solutions, I am eager to contribute my skills and expertise to your esteemed organization. My background includes proficient utilization of frameworks and technologies such as Spring-boot, NodeJs, Angular, etc., enabling me to develop efficient, robust, and scalable applications.
-                            <br>
-                            &emsp; I am open to relocating to any place in the USA. Please find my employer details and resume attached, and let me know if you need anything.</p>
+                            <p>Hello {},</p>
                             <p>
-
+                            I hope you are safe and doing well. 
+                            <br>
+                            With over seven years of expertise as a Senior Software Fullstack developer, I bring a wealth of knowledge to the organization. I reside in Dallas, Texas. I am open to relocating to any place in the USA and remote opportunities.                            <br>
+                            I am excited about contributing my skills and experience to your team. Could we schedule a discussion at your earliest convenience to explore this further?                            <p>
+                            For your perusal, I have attached my resume.
+                            
                             <b>Employer Details:</b>
                             <br>
                             Rahul Varma
@@ -80,11 +82,13 @@ def main():
 
                             <br>
                             <p>
-                            <b>Thanks</b>
+                            <b>Thanks,</b>
                             <br>
                             Sai Santhosh
                             <br>
-                            (720) 649- 6277
+                            Email: kondurisanthosh500@gmail.com
+                            <br>
+                            Phone: (720) 649- 6277
                             </p>      
                       </body>
                 </html>
