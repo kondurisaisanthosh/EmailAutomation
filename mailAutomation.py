@@ -55,7 +55,7 @@ def main():
             # Create message container - the correct MIME type is multipart/alternative.
             msg = MIMEMultipart()
             msg[constants.FROM] = sender_email
-            msg[constants.SUBJECT] = "Job Application: Java Full Stack Developer"
+            msg[constants.SUBJECT] = "Passionate Java Developer Eager for New Opportunities"
             msg[constants.TO] = receiver_email
 
             # Create the body of the message (HTML version).
