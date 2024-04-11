@@ -114,7 +114,8 @@ def main():
             print("Email sent successfully to", receiver_email)
         end_time = time.time()
         total_time = end_time - start_time
-        print("Total time taken:", total_time, "seconds")
+        rounded_time = round(total_time, 3)
+        print("Total time taken:", rounded_time, "seconds")
         print("Total No of Emails:", count)
 
     except Exception as e:
