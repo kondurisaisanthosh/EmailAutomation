@@ -33,6 +33,8 @@ def getEmails():
     return out
 
 def main():
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
     try:
         start_time = time.time()
         count=0
@@ -43,8 +45,7 @@ def main():
         password = properties[constants.PASSWORD]
 
         # Connect to the SMTP server.
-        server = smtplib.SMTP('smtp.gmail.com', 587)
-        server.starttls()
+
         server.login(sender_email, password)
 
         receiver_emails = getEmails()
